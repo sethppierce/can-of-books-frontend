@@ -6,12 +6,12 @@
 #divContainer {
   width: 400px;
   position: relative;
-  margin-bottom: 40px;
   margin-top: 20px;
 }
 
 .carousel-caption {
   height: 100%; 
+  margin-bottom: 0!important;
 }
 
 #bookTitle {
@@ -31,7 +31,7 @@
   width: 100%;
   justify-content: center;
   position: absolute;
-  bottom: 0;
+  bottom: 4%;
   display: flex;
   left: 0;
   right: 0;
@@ -45,7 +45,8 @@
 }
 
 #buttonDiv{
-  position:fixed;
+  position:relative;
+  z-index: 1;
   width: 400px;
   justify-content: center;
   width: 80px;
@@ -54,4 +55,18 @@
 
 #addBook{
   margin-bottom: 20px;
+}
+
+.carousel-indicators{
+  position: absolute;
+  bottom: 7% !important;
+  margin-bottom: 0 !important;
+}
+
+.carousel-control-next{
+  height: 94% !important;
+}
+
+.carousel-control-prev{
+  height: 94% !important;
 }
