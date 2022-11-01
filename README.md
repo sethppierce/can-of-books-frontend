@@ -13,23 +13,35 @@ Application Display books from a database
 
 ## Architecture
 
- MongoDB, Javascript, React
+ MongoDB, Javascript, React, Express
 
 ## Change Log
 
 10/31/2022 3:10pm just starting to put inital parts into place
 
+11/1/2022 5pm EST User can now add and delete book to the shelf
+
 ## Estimates
 
 Name of feature: Books
 
-Estimate of time needed to complete: 2 hourse
+Estimate of time needed to complete: 2 hours
 
 Start time: 4 PM EST
 
 Finish time:  6:30 PM EST
 
 Actual time needed to complete: 2 and half hours
+
+Name of feature: Book Add and Delete
+
+Estimate of time needed to complete: 2 hours
+
+Start time: 3 PM EST
+
+Finish time:  5 PM EST
+
+Actual time needed to complete: 2
 
 ## Credit and Collaborations
 <!-- Give credit (and a link) to other people or resources that helped you build this application. -->
