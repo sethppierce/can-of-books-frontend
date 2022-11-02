@@ -6,13 +6,16 @@ import bookcover from './book.jpg';
 import Rating from './Rating';
 import Button from 'react-bootstrap/Button';
 import BookFormModal from './BookFormModal'
+import BookUpdateModal from './BookUpdateModal';
 
 class BestBooks extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       books: [],
-      display: false
+      display: false,
+      selectedBook: null,
+      updateDisplay: false
     }
   }
 
@@ -68,7 +71,28 @@ deleteBook = async (id) => {
   }
 }
 
+updateBooks = async (bookToUpdate) => {
+  try {
+    let updatedBook = await axios.put(`https://can-of-books-ste-sef.herokuapp.com/books/${bookToUpdate._id}`, bookToUpdate)
+    let updateBooksArr = this.state.books.map(book => {
+      return book._id === updatedBook._id
+      ? updatedBook.data
+      : book
+    })
+    this.setState({
+      books: updateBooksArr,
+      updateDisplay: false
+    })
+  } catch (error) {
+    console.log(error.message)
+  }
+}
+
 componentDidMount(){
+  this.getBooks();
+}
+
+componentDidUpdate(){
   this.getBooks();
 }
 
@@ -76,7 +100,7 @@ componentDidMount(){
     console.log(this.state.books)
     /* TODO: render all the books in a Carousel */
     let books = this.state.books.map(book => {
-      return <Carousel.Item key={book._id} id='carouselItem'>
+      return <Carousel.Item key={book._id} id='carouselItem' interval={5641231231231}>
       <img
         className="d-block w-100 h-50"
         src={bookcover}
@@ -87,6 +111,7 @@ componentDidMount(){
         <p id='bookDescription'>{book.description}</p>
         <Rating rating={book.rating} id='rating'/>
       </Carousel.Caption>
+      <div id='buttonDiv'><Button onClick={()=> this.setState({updateDisplay: true , selectedBook: book})} id='deleteBook' variant="success">Update Book</Button></div>
       <div id='buttonDiv'><Button onClick={() => {this.deleteBook(book._id)}} id='deleteBook' variant="danger">Delete Book</Button></div>
     </Carousel.Item>
     })
@@ -100,6 +125,13 @@ componentDidMount(){
           ) : (
             <h3>The Book Collection is Empty</h3>
           )}
+          {
+            this.state.selectedBook &&
+          <BookUpdateModal show={this.state.updateDisplay} 
+          onHide={()=> this.setState({updateDisplay: false})} 
+          book={this.state.selectedBook} 
+          updateBooks={this.updateBooks}/>
+          }
           <Button onClick={()=> this.setState({display:true})} id='addBook'>Add Book</Button>
         </section>
       </>

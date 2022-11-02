@@ -31,7 +31,7 @@
   width: 100%;
   justify-content: center;
   position: absolute;
-  bottom: 4%;
+  bottom: 10%;
   display: flex;
   left: 0;
   right: 0;
@@ -59,14 +59,14 @@
 
 .carousel-indicators{
   position: absolute;
-  bottom: 7% !important;
+  bottom: 12% !important;
   margin-bottom: 0 !important;
 }
 
 .carousel-control-next{
-  height: 94% !important;
+  height: 88% !important;
 }
 
 .carousel-control-prev{
-  height: 94% !important;
+  height: 88% !important;
 }
