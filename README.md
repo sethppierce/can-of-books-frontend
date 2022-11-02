@@ -21,9 +21,11 @@ Application Display books from a database
 
 11/1/2022 5pm EST User can now add and delete book to the shelf
 
+11/2/2022 4:30PM EST user can now update current book information
+
 ## Estimates
 
-Name of feature: Books
+### Name of feature: Books
 
 Estimate of time needed to complete: 2 hours
 
@@ -33,7 +35,7 @@ Finish time:  6:30 PM EST
 
 Actual time needed to complete: 2 and half hours
 
-Name of feature: Book Add and Delete
+### Name of feature: Book Add and Delete
 
 Estimate of time needed to complete: 2 hours
 
@@ -42,6 +44,16 @@ Start time: 3 PM EST
 Finish time:  5 PM EST
 
 Actual time needed to complete: 2
+
+### Name of feature: Update Book
+
+Estimate of time needed to complete: 2 hours
+
+Start time: 3 PM EST
+
+Finish time:  4:30 PM EST
+
+Actual time needed to complete: one and a half hours
 
 ## Credit and Collaborations
 <!-- Give credit (and a link) to other people or resources that helped you build this application. -->
